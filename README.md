@@ -73,7 +73,7 @@ Open [http://localhost:8080](http://localhost:8080) in your browser.
 ## 📁 Project Structure
 
 ```
-pomodoro-duck/
+Pomodoro_rubber_duck/
 ├── index.html   # Semantic markup, tab roles, aria attributes
 ├── style.css    # CSS variables, dark mode, animations
 └── script.js    # ES6 module — timer logic, canvas drawing, WebAudio
