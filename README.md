@@ -47,7 +47,7 @@
 No build step, no npm install. Just clone and serve.
 
 ```bash
-git clone https://github.com/your-username/pomodoro-duck.git
+git clone https://github.com/FraDev85/Pomodoro_rubber_duck.git
 cd pomodoro-duck
 ```
 
