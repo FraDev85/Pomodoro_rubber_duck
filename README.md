@@ -13,6 +13,7 @@
 ## ✨ Features
 
 ### 🍅 Pomodoro Timer
+
 - **20-minute focus sessions** with automatic 5-minute breaks
 - Animated tomato that **fills with liquid** as time progresses
 - **6 color themes** to personalize the experience
@@ -21,12 +22,14 @@
 - Toast notifications on phase change
 
 ### 🦆 Rubber Duck Mode
+
 - A bouncy, blinking **animated rubber duck** drawn on canvas
 - Chat interface — type anything, the duck responds with a `quack`
 - Click the duck directly for an instant quack + squish animation
 - Synthesized **quack sound** on every interaction
 
 ### General
+
 - **Zero dependencies** — pure HTML, CSS, JS
 - **Dark mode** support via `prefers-color-scheme`
 - Accessible markup (`role="tab"`, `aria-live`, `aria-label`)
@@ -36,9 +39,9 @@
 
 ## 🧠 The Techniques
 
-**Pomodoro Technique** *(Francesco Cirillo, 1980s)* — Work in focused intervals separated by short breaks. The ticking timer creates urgency and the breaks prevent burnout. This app uses 20-minute sessions instead of the traditional 25, a common and effective variation.
+**Pomodoro Technique** _(Francesco Cirillo, 1980s)_ — Work in focused intervals separated by short breaks. The ticking timer creates urgency and the breaks prevent burnout. This app uses 20-minute sessions instead of the traditional 25, a common and effective variation.
 
-**Rubber Duck Debugging** *(Hunt & Thomas, "The Pragmatic Programmer")* — Explain your problem out loud to an inanimate object. The act of verbalizing forces your brain to reorganize information, often revealing the solution without any external help. The duck doesn't need to understand — you do.
+**Rubber Duck Debugging** _(Hunt & Thomas, "The Pragmatic Programmer")_ — Explain your problem out loud to an inanimate object. The act of verbalizing forces your brain to reorganize information, often revealing the solution without any external help. The duck doesn't need to understand — you do.
 
 ---
 
@@ -48,7 +51,7 @@ No build step, no npm install. Just clone and serve.
 
 ```bash
 git clone https://github.com/FraDev85/Pomodoro_rubber_duck.git
-cd pomodoro-duck
+cd Pomodoro_rubber_duck
 ```
 
 Then start a local server (required for ES6 modules):
@@ -87,11 +90,11 @@ The project is intentionally kept in three files with no framework or bundler. T
 
 All sounds are synthesized at runtime using the **Web Audio API** — no audio files are loaded or bundled.
 
-| Event | Sound | Waveform |
-|---|---|---|
-| Focus session starts | Ascending three-note bell | `sine` |
-| Break starts | Descending three-note bell | `sine` |
-| Duck interaction | Short quack burst | `sawtooth` |
+| Event                | Sound                      | Waveform   |
+| -------------------- | -------------------------- | ---------- |
+| Focus session starts | Ascending three-note bell  | `sine`     |
+| Break starts         | Descending three-note bell | `sine`     |
+| Duck interaction     | Short quack burst          | `sawtooth` |
 
 ---
 
@@ -100,8 +103,8 @@ All sounds are synthesized at runtime using the **Web Audio API** — no audio f
 All key values are defined at the top of `script.js`:
 
 ```js
-const WORK_SECS  = 20 * 60;  // change focus duration
-const BREAK_SECS = 5  * 60;  // change break duration
+const WORK_SECS = 20 * 60; // change focus duration
+const BREAK_SECS = 5 * 60; // change break duration
 ```
 
 Colors are declared as CSS custom properties in `style.css` and fully support dark mode via `prefers-color-scheme: dark`.
