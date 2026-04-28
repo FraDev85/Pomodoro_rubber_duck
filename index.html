@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro & Duck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="app">
+
+    <!-- Mode switcher -->
+    <nav class="mode-bar" role="tablist" aria-label="Modalità">
+      <button class="mode-btn active" id="btnPomodoro" role="tab" aria-selected="true"  onclick="switchMode('pomodoro')">🍅 pomodoro</button>
+      <button class="mode-btn"        id="btnDuck"     role="tab" aria-selected="false" onclick="switchMode('duck')">🦆 rubber duck</button>
+    </nav>
+
+    <!-- ── POMODORO MODE ────────────────────────────── -->
+    <section id="pomodoroMode" aria-label="Timer pomodoro">
+
+      <div class="canvas-zone">
+        <canvas id="timerCanvas" width="480" height="480" aria-label="Pomodoro animato"></canvas>
+      </div>
+
+      <div class="timer-display" id="timerDisplay" aria-live="polite">20:00</div>
+      <div class="phase-label"   id="phaseLabel">concentrazione</div>
+
+      <div class="controls">
+        <button class="btn btn-primary" id="startBtn" onclick="toggleTimer()">avvia</button>
+        <button class="btn"                            onclick="resetTimer()">reset</button>
+      </div>
+
+      <div class="color-row" aria-label="Scegli colore">
+        <span class="color-label">colore:</span>
+        <button class="color-dot selected" style="--c:#e34a30" data-color="#e34a30" aria-label="Rosso"   onclick="selectColor(this)"></button>
+        <button class="color-dot"          style="--c:#e3943a" data-color="#e3943a" aria-label="Arancio" onclick="selectColor(this)"></button>
+        <button class="color-dot"          style="--c:#3a9be3" data-color="#3a9be3" aria-label="Blu"     onclick="selectColor(this)"></button>
+        <button class="color-dot"          style="--c:#6b4ee3" data-color="#6b4ee3" aria-label="Viola"   onclick="selectColor(this)"></button>
+        <button class="color-dot"          style="--c:#3ac46b" data-color="#3ac46b" aria-label="Verde"   onclick="selectColor(this)"></button>
+        <button class="color-dot"          style="--c:#e33a8f" data-color="#e33a8f" aria-label="Rosa"    onclick="selectColor(this)"></button>
+      </div>
+
+      <div class="sessions-row" id="sessionsRow" aria-label="Sessioni completate">
+        <div class="session-pip" id="pip0"></div>
+        <div class="session-pip" id="pip1"></div>
+        <div class="session-pip" id="pip2"></div>
+        <div class="session-pip" id="pip3"></div>
+      </div>
+
+    </section>
+
+    <!-- ── DUCK MODE ───────────────────────────────── -->
+    <section id="duckMode" aria-label="Rubber duck debugging" hidden>
+
+      <div class="duck-zone" id="duckZone" role="button" tabindex="0"
+           aria-label="Clicca l'anatra per un quack"
+           onclick="quackClick()" onkeydown="if(event.key==='Enter'||event.key===' ')quackClick()">
+        <canvas id="duckCanvas" width="480" height="480"></canvas>
+      </div>
+
+      <div class="chat-box">
+        <div class="chat-messages" id="chatMessages" aria-live="polite">
+          <div class="msg msg-duck">quack! sono qui per ascoltarti. dimmi tutto. quack.</div>
+        </div>
+        <div class="chat-input-row">
+          <input class="chat-input" id="chatInput"
+                 placeholder="scrivi qualcosa…"
+                 aria-label="Messaggio per l'anatra"
+                 onkeydown="if(event.key==='Enter')sendMsg()" />
+          <button class="send-btn" onclick="sendMsg()" aria-label="Invia">invia →</button>
+        </div>
+      </div>
+
+      <p class="duck-hint">clicca l'anatra per un quack immediato</p>
+
+    </section>
+
+  </div><!-- #app -->
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
