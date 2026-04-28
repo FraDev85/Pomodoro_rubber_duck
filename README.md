@@ -47,7 +47,7 @@
 No build step, no npm install. Just clone and serve.
 
 ```bash
-git clone https://github.com/your-username/pomodoro-duck.git
+git clone https://github.com/FraDev85/Pomodoro_rubber_duck.git
 cd pomodoro-duck
 ```
 
@@ -73,7 +73,7 @@ Open [http://localhost:8080](http://localhost:8080) in your browser.
 ## 📁 Project Structure
 
 ```
-pomodoro-duck/
+Pomodoro_rubber_duck/
 ├── index.html   # Semantic markup, tab roles, aria attributes
 ├── style.css    # CSS variables, dark mode, animations
 └── script.js    # ES6 module — timer logic, canvas drawing, WebAudio
